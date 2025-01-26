@@ -64,6 +64,8 @@ body {
   background-color: var(--background-color);
   font-family: var(--default-font);
   transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.8;
+  color: #444;
 }
 
 a {
@@ -85,6 +87,8 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 /* PHP Email Form Messages
@@ -463,6 +467,7 @@ section,
   background-color: var(--background-color);
   padding: 60px 0;
   overflow: clip;
+  transition: all 0.5s ease-in-out;
 }
 
 /*--------------------------------------------------------------
@@ -523,6 +528,18 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.9));
 }
 
 .hero img {
@@ -636,6 +653,9 @@ section,
   justify-content: center;
   position: relative;
   z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .stats .stats-item {
@@ -658,6 +678,11 @@ section,
   margin: 0;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
+}
+
+.stats i:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /*--------------------------------------------------------------
@@ -778,6 +803,23 @@ section,
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
   font-family: var(--heading-font);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.portfolio .portfolio-filters li:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.portfolio .portfolio-filters li:hover:after {
+  width: 100%;
 }
 
 .portfolio .portfolio-filters li:hover,
@@ -804,6 +846,8 @@ section,
 .portfolio .portfolio-item {
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
 }
 
 .portfolio .portfolio-item .portfolio-info {
@@ -857,6 +901,11 @@ section,
   bottom: 0;
 }
 
+.portfolio .portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
@@ -868,6 +917,9 @@ section,
   text-align: center;
   transition: 0.3s;
   border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .services .service-item .icon {
@@ -912,7 +964,8 @@ section,
 }
 
 .services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .services .service-item.item-cyan i {
@@ -1004,6 +1057,9 @@ section,
   border-radius: 50%;
   border: 4px solid var(--background-color);
   margin: 0 auto;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .testimonials .testimonial-item h3 {
@@ -1046,6 +1102,10 @@ section,
 
 .testimonials .testimonial-item p {
   font-style: italic;
+}
+
+.testimonials .testimonial-img:hover {
+  transform: scale(1.1);
 }
 
 .testimonials .swiper-wrapper {
@@ -1121,12 +1181,16 @@ section,
   color: var(--default-color);
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.3s ease;
 }
 
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
@@ -1142,10 +1206,14 @@ section,
   padding: 10px 30px;
   transition: 0.4s;
   border-radius: 50px;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /*--------------------------------------------------------------
@@ -1252,10 +1320,14 @@ section,
   color: var(--contrast-color);
   border-radius: 50px;
   transition: 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio-details .portfolio-info .btn-visit:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .portfolio-details .portfolio-description h2 {
@@ -1281,6 +1353,13 @@ section,
   border: 6px solid var(--background-color);
   float: left;
   margin: 0 10px 0 0;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .testimonial-img:hover {
+  transform: scale(1.1);
 }
 
 .portfolio-details .portfolio-description .testimonial-item h3 {
@@ -1329,6 +1408,9 @@ section,
 .service-details .service-box {
   padding: 20px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .service-details .service-box+.service-box {
@@ -1351,6 +1433,23 @@ section,
   padding: 12px 15px;
   margin-top: 15px;
   transition: 0.3s;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.service-details .services-list a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.service-details .services-list a:hover:after {
+  width: 100%;
 }
 
 .service-details .services-list a:first-child {
@@ -1384,6 +1483,23 @@ section,
   padding: 10px 0;
   transition: 0.3s;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.service-details .download-catalog a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.service-details .download-catalog a:hover:after {
+  width: 100%;
 }
 
 .service-details .download-catalog a:first-child {
@@ -1452,6 +1568,11 @@ section,
   color: var(--accent-color);
 }
 
+.service-details .service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
@@ -1479,4 +1600,8 @@ section,
 .theme-icon {
   font-size: 20px;
   color: var(--default-color);
+}
+
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
